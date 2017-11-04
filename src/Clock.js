@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import moment from 'moment';
-import './Timer.css';
+import './Clock.css';
 
-class Timer extends Component {
+class Clock extends Component {
     constructor(props) {
         super(props)
-        this.state = {timer: this.getDate()};
+        this.state = {date: this.getDate()};
     }
 
     getDate() {
@@ -13,15 +13,15 @@ class Timer extends Component {
     }
 
     getCurrentDate() {
-        return moment(this.state.timer).format('MMM Do YY');
+        return moment(this.state.date).format('MMM Do YY');
     }
 
     getCurrentTime() {
-        return moment(this.state.timer).format('H:mm:ss');
+        return moment(this.state.date).format('H:mm:ss');
     }
 
     componentDidMount() {
-        this.interval = setInterval(() => this.setState({ timer: this.getDate() }), 1000);
+        this.interval = setInterval(() => this.setState({date: this.getDate()}), 1000);
     }
 
     componentWillUnmount() {
@@ -33,7 +33,7 @@ class Timer extends Component {
         const currentTime = this.getCurrentTime().toString();
 
         return (
-            <div className='Timer'>
+            <div className='Clock'>
                 <div className='Date'>
                     {currentDate}
                 </div>
@@ -45,4 +45,4 @@ class Timer extends Component {
     }
 }
 
-export default Timer;
+export default Clock;
