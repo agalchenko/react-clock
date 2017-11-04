@@ -1,0 +1,18 @@
+.Timer {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: 4em;
+}
+
+.Date {
+    margin: 5vh 0;
+}
+
+.Time {
+    margin: 5vh 0;
+    font-size: 3em;
+    position: fixed;
+    left: 22vw;
+}
